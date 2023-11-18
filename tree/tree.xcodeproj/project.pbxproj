@@ -16,6 +16,7 @@
 		56DB3FD52B08D84D00329EE0 /* TreeMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DB3FD42B08D84D00329EE0 /* TreeMap.swift */; };
 		56DB3FDA2B090C7D00329EE0 /* TreeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DB3FD92B090C7D00329EE0 /* TreeDetailView.swift */; };
 		D7AEC6CC2B08F52F006B3B29 /* WaterTreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AEC6CB2B08F52F006B3B29 /* WaterTreeView.swift */; };
+		D7AEC6CE2B090264006B3B29 /* WaterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AEC6CD2B090264006B3B29 /* WaterDetailView.swift */; };
 		D7E91E772B08D78F0046B67B /* WaterTreeTreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E91E762B08D78F0046B67B /* WaterTreeTreeView.swift */; };
 		D7E91E792B08E99F0046B67B /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E91E782B08E99F0046B67B /* UIColorExtension.swift */; };
 /* End PBXBuildFile section */
@@ -31,6 +32,7 @@
 		56DB3FD42B08D84D00329EE0 /* TreeMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeMap.swift; sourceTree = "<group>"; };
 		56DB3FD92B090C7D00329EE0 /* TreeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeDetailView.swift; sourceTree = "<group>"; };
 		D7AEC6CB2B08F52F006B3B29 /* WaterTreeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterTreeView.swift; sourceTree = "<group>"; };
+		D7AEC6CD2B090264006B3B29 /* WaterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterDetailView.swift; sourceTree = "<group>"; };
 		D7E91E762B08D78F0046B67B /* WaterTreeTreeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterTreeTreeView.swift; sourceTree = "<group>"; };
 		D7E91E782B08E99F0046B67B /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -74,6 +76,7 @@
 				D7E91E762B08D78F0046B67B /* WaterTreeTreeView.swift */,
 				D7AEC6CB2B08F52F006B3B29 /* WaterTreeView.swift */,
 				56DB3FD92B090C7D00329EE0 /* TreeDetailView.swift */,
+				D7AEC6CD2B090264006B3B29 /* WaterDetailView.swift */,
 				D7E91E782B08E99F0046B67B /* UIColorExtension.swift */,
 				56DB3FC22B08CF4E00329EE0 /* Assets.xcassets */,
 				56DB3FC42B08CF4E00329EE0 /* tree.entitlements */,
@@ -187,6 +190,7 @@
 				56DB3FC12B08CF4B00329EE0 /* ContentView.swift in Sources */,
 				56DB3FBF2B08CF4B00329EE0 /* treeApp.swift in Sources */,
 				56DB3FD52B08D84D00329EE0 /* TreeMap.swift in Sources */,
+				D7AEC6CE2B090264006B3B29 /* WaterDetailView.swift in Sources */,
 				56DB3FD22B08D2D000329EE0 /* Tree.swift in Sources */,
 				D7E91E792B08E99F0046B67B /* UIColorExtension.swift in Sources */,
 			);

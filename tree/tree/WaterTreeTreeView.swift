@@ -12,7 +12,7 @@ struct WaterTreeTreeView: View {
     let green = UIColor(rgb: 0x02b500)
     let yellowLight = UIColor(rgb: 0xff9127)
     let greenLight = UIColor(rgb: 0x02c600)
-    @State var isThirsty = true
+    @Binding var isThirsty: Bool
     var health: Int {
         get {
             return isThirsty ? 0 : 100
@@ -40,7 +40,8 @@ struct WaterTreeTreeView: View {
 
 #Preview {
     return VStack {
-        WaterTreeTreeView()
+        WaterTreeTreeView(isThirsty: .constant(true))
+        WaterTreeTreeView(isThirsty: .constant(false))
         
     }
 }
