@@ -13,6 +13,7 @@
 		56DB3FC72B08CF4E00329EE0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56DB3FC62B08CF4E00329EE0 /* Preview Assets.xcassets */; };
 		56DB3FCF2B08D1BA00329EE0 /* CoatySwift in Frameworks */ = {isa = PBXBuildFile; productRef = 56DB3FCE2B08D1BA00329EE0 /* CoatySwift */; };
 		56DB3FD22B08D2D000329EE0 /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DB3FD12B08D2D000329EE0 /* Tree.swift */; };
+		56DB3FD52B08D84D00329EE0 /* TreeMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DB3FD42B08D84D00329EE0 /* TreeMap.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		56DB3FC42B08CF4E00329EE0 /* tree.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = tree.entitlements; sourceTree = "<group>"; };
 		56DB3FC62B08CF4E00329EE0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		56DB3FD12B08D2D000329EE0 /* Tree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tree.swift; sourceTree = "<group>"; };
+		56DB3FD42B08D84D00329EE0 /* TreeMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeMap.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				56DB3FD02B08D2A200329EE0 /* Model */,
 				56DB3FBE2B08CF4B00329EE0 /* treeApp.swift */,
 				56DB3FC02B08CF4B00329EE0 /* ContentView.swift */,
+				56DB3FD42B08D84D00329EE0 /* TreeMap.swift */,
 				56DB3FC22B08CF4E00329EE0 /* Assets.xcassets */,
 				56DB3FC42B08CF4E00329EE0 /* tree.entitlements */,
 				56DB3FC52B08CF4E00329EE0 /* Preview Content */,
@@ -168,6 +171,7 @@
 			files = (
 				56DB3FC12B08CF4B00329EE0 /* ContentView.swift in Sources */,
 				56DB3FBF2B08CF4B00329EE0 /* treeApp.swift in Sources */,
+				56DB3FD52B08D84D00329EE0 /* TreeMap.swift in Sources */,
 				56DB3FD22B08D2D000329EE0 /* Tree.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

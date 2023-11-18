@@ -19,7 +19,7 @@ extension LatLng: CustomStringConvertible {
     }
 }
 
-final class Tree: CoatyObject {
+final class Tree: CoatyObject, Identifiable {
     // MARK: - Class registration.
     
     override class var objectType: String {
@@ -27,13 +27,14 @@ final class Tree: CoatyObject {
     }
     
     // MARK: - Properties.
-    
+    let id: UUID
     let location: LatLng
     let humidity: Int
     
     // MARK: - Initializers.
     
-    init(location: LatLng, humidity: Int) {
+    init(id: UUID, location: LatLng, humidity: Int) {
+        self.id = id
         self.location = location
         self.humidity = humidity
         super.init(coreType: .CoatyObject,
@@ -45,12 +46,14 @@ final class Tree: CoatyObject {
     // MARK: Codable methods.
     
     enum CodingKeys: String, CodingKey {
+        case id
         case location
         case humidity
     }
     
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.id = try container.decode(UUID.self, forKey: .id)
         self.location = try container.decode(LatLng.self, forKey: .location)
         self.humidity = try container.decode(Int.self, forKey: .humidity)
         try super.init(from: decoder)
@@ -59,6 +62,7 @@ final class Tree: CoatyObject {
     override func encode(to encoder: Encoder) throws {
         try super.encode(to: encoder)
         var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(self.id, forKey: .id)
         try container.encode(self.location, forKey: .location)
         try container.encode(self.humidity, forKey: .humidity)
     }
