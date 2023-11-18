@@ -10,11 +10,11 @@ import SwiftUI
 
 
 struct WaterDetailView: View {
-    let estimatedLiters = 10
-    let humidity = 60
+    let estimatedLiters = 25
+    let humidity = 30
     let isFertilized = true
     let recommendedWateringTime: Date = Date(timeIntervalSinceNow: 3.0 * 60 * 60)
-    let dateLastRain = Date(timeIntervalSinceNow: -3.0 * 60 * 60 * 24)
+    let dateLastRain = Date(timeIntervalSinceNow: -13.0 * 60 * 60 * 24)
     let dateNextRain = Date(timeIntervalSinceNow: 5.0 * 60 * 60 * 24)
     let dateFormatter = DateFormatter()
     let dateIntervalFormatter = DateIntervalFormatter()
@@ -53,6 +53,11 @@ struct WaterDetailView: View {
                 Text("Next rain")
                 Spacer()
                 Text("In \(getInterval(start: Date(), end: dateNextRain)) days")
+            }
+            HStack {
+                Text("Current Temperature")
+                Spacer()
+                Text("38°C")
             }
         }.padding(.horizontal, 30)
     }
