@@ -22,10 +22,19 @@ struct WaterTreeTreeView: View {
     var body: some View {
         ZStack(content: {
             Image("tree_trunk")
-            Image("tree_head_2").renderingMode(.template)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+            Image("tree_head_2")
+                .resizable()
+                .renderingMode(.template)
+                .aspectRatio(contentMode: .fit)
                 .foregroundColor(Color(yellow.toColor(green, percentage: CGFloat(health))))
-            Image("tree_head_1").renderingMode(/*@START_MENU_TOKEN@*/.template/*@END_MENU_TOKEN@*/).foregroundColor(Color(yellowLight.toColor(greenLight, percentage: CGFloat(health))))
+            Image("tree_head_1")
+                .resizable()
+                .renderingMode(/*@START_MENU_TOKEN@*/.template/*@END_MENU_TOKEN@*/)
+                .aspectRatio(contentMode: .fit).foregroundColor(Color(yellowLight.toColor(greenLight, percentage: CGFloat(health))))
         }).animation(.easeInOut(duration: 0.5), value: health)
+        
     }
 }
 
