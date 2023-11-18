@@ -17,7 +17,7 @@ struct TreeDetailView: View {
             LookAroundPreview(initialScene: lookAroundScene)
                 .overlay(alignment: .bottomTrailing) {
                     HStack {
-                        Text("\(selectedResult.name)")
+                        Text("\(selectedResult.id)")
                     }
                     .font(.caption)
                     .foregroundStyle(.white)
@@ -29,14 +29,14 @@ struct TreeDetailView: View {
                 .onChange(of: selectedResult) {
                     getLookAroundScene()
                 }
-
         }
     }
     
     func getLookAroundScene() {
         lookAroundScene = nil
+        
         Task {
-            let request = MKLookAroundSceneRequest(coordinate: CLLocationCoordinate2D(latitude: selectedResult.location.lat, longitude: selectedResult.location.lng))
+            let request = MKLookAroundSceneRequest(coordinate: CLLocationCoordinate2D(latitude: selectedResult.location.lat, longitude: selectedResult.location.lon))
             lookAroundScene = try? await request.scene
         }
     }

@@ -10,6 +10,8 @@ import MapKit
 import CoreLocationUI
 
 struct TreeMap: View {
+    @EnvironmentObject var model: Model
+    
     @State private var selection: UUID?
     @State private var route: MKRoute?
     @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 48.263090, longitude: 11.669253), span: MKCoordinateSpan(latitudeDelta: 10, longitudeDelta: 10))
@@ -21,7 +23,7 @@ struct TreeMap: View {
         longitude: 11.649272
     )
     @StateObject var locationManager = LocationManager()
-
+    
     var userLatitude: String {
         return "\(locationManager.lastLocation?.coordinate.latitude ?? 0)"
     }
@@ -31,13 +33,13 @@ struct TreeMap: View {
     }
     
     // Munich
-    var tree = Tree(id: UUID(), location: LatLng(lat: 48.152600, lng: 11.580371), humidity: 10)
+    var tree = Tree(id: UUID(), location: LatLon(lat: 48.152600, lon: 11.580371), moisture: 10, soilConductivity: 10)
     let trees: [Tree]
     
     // Garching
     //    var tree = Tree(id: UUID(), location: LatLng(lat: 48.263082, lng: 11.669272), humidity: 10)
     
-    var waterSource = WaterSource(id: UUID(), location: LatLng(lat: 48.264090,lng: 11.666800))
+    var waterSource = WaterSource(id: UUID(), location: LatLon(lat: 48.264090, lon: 11.666800))
     
     init() {
         self.trees = [tree]
@@ -46,10 +48,10 @@ struct TreeMap: View {
     var body: some View {
         Map(selection: $selection) {
             ForEach(trees){ tree in
-                Marker("Tree", systemImage: "tree.fill", coordinate: CLLocationCoordinate2D(latitude: tree.location.lat, longitude: tree.location.lng)).tint(.orange)
+                Marker("Tree", systemImage: "tree.fill", coordinate: tree.getCLLocationCoordinate2D()).tint(.orange)
             }
             
-            Marker("Water Source", systemImage: "drop.fill", coordinate: CLLocationCoordinate2D(latitude: waterSource.location.lat, longitude: waterSource.location.lng)).tint(.blue)
+            Marker("Water Source", systemImage: "drop.fill", coordinate: waterSource.getCLLocationCoordinate2D()).tint(.blue)
             
             UserAnnotation()
             
@@ -66,8 +68,10 @@ struct TreeMap: View {
                             VStack {
                                 HStack {
                                     VStack(alignment: .leading) {
-                                        Text(item.name).font(.title)
-                                        Text("14 km away")
+                                        Text("Tree").font(.title)
+                                        if let userLocation =  locationManager.lastLocation {
+                                            Text("\(Int(item.getCLLocation().distance(from: userLocation))) meter away from you")
+                                        }
                                     }
                                     Spacer()
                                 }.padding()
@@ -91,14 +95,10 @@ struct TreeMap: View {
         .onChange(of: selection) {
             guard let selection else { return }
             guard let item = trees.first(where: { $0.id == selection }) else { return }
-            
-            
         }
-        
         .onAppear {
             getDirections()
         }
-        
         .mapControls {
             MapCompass()
             MapUserLocationButton()
@@ -108,13 +108,11 @@ struct TreeMap: View {
     func getDirections() {
         self.route = nil
         
-        
         // Create and configure the request
         let request = MKDirections.Request()
         request.source = MKMapItem(placemark: MKPlacemark(coordinate: self.startingPoint))
         
-        request.destination = MKMapItem(placemark: MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: tree.location.lat, longitude: tree.location.lng)))
-        
+        request.destination = MKMapItem(placemark: MKPlacemark(coordinate: tree.getCLLocationCoordinate2D()))
         
         
         // Get the directions based on the request
@@ -123,35 +121,6 @@ struct TreeMap: View {
             let response = try? await directions.calculate()
             route = response?.routes.first
         }
-    }
-}
-
-struct MyView: View {
-    
-    @StateObject var locationManager = LocationManager()
-    
-    var userLatitude: String {
-        return "\(locationManager.lastLocation?.coordinate.latitude ?? 0)"
-    }
-    
-    var userLongitude: String {
-        return "\(locationManager.lastLocation?.coordinate.longitude ?? 0)"
-    }
-    
-    var body: some View {
-        VStack {
-            Text("location status: \(locationManager.statusString)")
-            HStack {
-                Text("latitude: \(userLatitude)")
-                Text("longitude: \(userLongitude)")
-            }
-        }
-    }
-}
-
-struct MyView_Previews: PreviewProvider {
-    static var previews: some View {
-        MyView()
     }
 }
 
