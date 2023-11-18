@@ -1,6 +1,4 @@
-
 import logging
-
 
 class Database:
     def __init__(self):
@@ -18,11 +16,11 @@ class Database:
             return None
     
     def add_request(self, request):
-        self._requests[request.request_id] = request
+        self._requests[request.id] = request
         logging.debug(f"Added request: {request}")
         
-    def get_request(self, request_id):
+    def get_request(self, id):
         try: 
-            return self._requests[request_id]
+            return self._requests[id]
         except KeyError:
             return None
