@@ -8,18 +8,9 @@
 import Foundation
 import CoatySwift
 
-struct LatLng: Codable, Equatable {
-    let lat: Double
-    let lng: Double
-}
 
-extension LatLng: CustomStringConvertible {
-    var description: String {
-        return "\(lat), \(lng)"
-    }
-}
 
-final class Tree: CoatyObject, Identifiable {
+final class Tree: CoatyObject, Identifiable, Equatable, LocationObject {
     // MARK: - Class registration.
     
     override class var objectType: String {
@@ -65,5 +56,9 @@ final class Tree: CoatyObject, Identifiable {
         try container.encode(self.id, forKey: .id)
         try container.encode(self.location, forKey: .location)
         try container.encode(self.humidity, forKey: .humidity)
+    }
+    
+    static func == (lhs: Tree, rhs: Tree) -> Bool {
+        return lhs.id == rhs.id
     }
 }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		568FF6F52B092EBC00101AE7 /* LocationObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568FF6F42B092EBC00101AE7 /* LocationObject.swift */; };
+		568FF6F72B092F5300101AE7 /* WaterSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568FF6F62B092F5300101AE7 /* WaterSource.swift */; };
 		56DB3FBF2B08CF4B00329EE0 /* treeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DB3FBE2B08CF4B00329EE0 /* treeApp.swift */; };
 		56DB3FC12B08CF4B00329EE0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DB3FC02B08CF4B00329EE0 /* ContentView.swift */; };
 		56DB3FC32B08CF4E00329EE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56DB3FC22B08CF4E00329EE0 /* Assets.xcassets */; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		568FF6F42B092EBC00101AE7 /* LocationObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationObject.swift; sourceTree = "<group>"; };
+		568FF6F62B092F5300101AE7 /* WaterSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterSource.swift; sourceTree = "<group>"; };
 		56DB3FBB2B08CF4B00329EE0 /* tree.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tree.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56DB3FBE2B08CF4B00329EE0 /* treeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = treeApp.swift; sourceTree = "<group>"; };
 		56DB3FC02B08CF4B00329EE0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -96,6 +100,8 @@
 		56DB3FD02B08D2A200329EE0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				568FF6F42B092EBC00101AE7 /* LocationObject.swift */,
+				568FF6F62B092F5300101AE7 /* WaterSource.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -186,7 +192,9 @@
 			files = (
 				D7AEC6CC2B08F52F006B3B29 /* WaterTreeView.swift in Sources */,
 				D7E91E772B08D78F0046B67B /* WaterTreeTreeView.swift in Sources */,
+				568FF6F72B092F5300101AE7 /* WaterSource.swift in Sources */,
 				56DB3FDA2B090C7D00329EE0 /* TreeDetailView.swift in Sources */,
+				568FF6F52B092EBC00101AE7 /* LocationObject.swift in Sources */,
 				56DB3FC12B08CF4B00329EE0 /* ContentView.swift in Sources */,
 				56DB3FBF2B08CF4B00329EE0 /* treeApp.swift in Sources */,
 				56DB3FD52B08D84D00329EE0 /* TreeMap.swift in Sources */,

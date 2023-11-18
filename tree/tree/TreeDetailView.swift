@@ -9,38 +9,39 @@ import SwiftUI
 import MapKit
 
 struct TreeDetailView: View {
-    @State var lookAroundScene: MKLookAroundScene?
-    @Binding var selectedResult: MKMapItem?
+    @State private var lookAroundScene: MKLookAroundScene?
+    var selectedResult: Tree
     
     var body: some View {
         VStack {
-            if let scene = lookAroundScene {
-                LookAroundPreview(initialScene: scene)
-                    .frame(height: 200)
-                    .cornerRadius(12)
-                    .padding()
-            } else {
-                ContentUnavailableView("No preview available", image: "eye.slash")
-            }
-            Spacer()
-            Button(action: {}) {
-                Text("Open in Maps")
-                
-            }.buttonStyle(.borderedProminent)
+            LookAroundPreview(initialScene: lookAroundScene)
+                .overlay(alignment: .bottomTrailing) {
+                    HStack {
+                        Text("\(selectedResult.name)")
+                    }
+                    .font(.caption)
+                    .foregroundStyle(.white)
+                    .padding(18)
+                }
+                .onAppear {
+                    getLookAroundScene()
+                }
+                .onChange(of: selectedResult) {
+                    getLookAroundScene()
+                }
+
         }
     }
     
-    func fetchPreview() {
-        if let selectedResult {
-            lookAroundScene = nil
-            Task {
-                let request = MKLookAroundSceneRequest(mapItem: selectedResult)
-                lookAroundScene = try? await request.scene
-            }
+    func getLookAroundScene() {
+        lookAroundScene = nil
+        Task {
+            let request = MKLookAroundSceneRequest(coordinate: CLLocationCoordinate2D(latitude: selectedResult.location.lat, longitude: selectedResult.location.lng))
+            lookAroundScene = try? await request.scene
         }
     }
 }
 
 //#Preview {
-//    TreeDetailView(, selectedResult: .constant())
+//    TreeDetailView(selectedResult: .constant(nil))
 //}
