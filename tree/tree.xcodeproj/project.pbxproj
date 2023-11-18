@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		560949182B09445400003D3A /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560949172B09445400003D3A /* Home.swift */; };
 		568FF6F52B092EBC00101AE7 /* LocationObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568FF6F42B092EBC00101AE7 /* LocationObject.swift */; };
 		568FF6F72B092F5300101AE7 /* WaterSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568FF6F62B092F5300101AE7 /* WaterSource.swift */; };
 		56DB3FBF2B08CF4B00329EE0 /* treeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DB3FBE2B08CF4B00329EE0 /* treeApp.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		560949172B09445400003D3A /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		568FF6F42B092EBC00101AE7 /* LocationObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationObject.swift; sourceTree = "<group>"; };
 		568FF6F62B092F5300101AE7 /* WaterSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterSource.swift; sourceTree = "<group>"; };
 		56DB3FBB2B08CF4B00329EE0 /* tree.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tree.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,6 +89,7 @@
 				56DB3FD42B08D84D00329EE0 /* TreeMap.swift */,
 				D7D3002C2B09134E002467D8 /* LocationManager.swift */,
 				D7E91E762B08D78F0046B67B /* WaterTreeTreeView.swift */,
+				560949172B09445400003D3A /* Home.swift */,
 				D7AEC6CB2B08F52F006B3B29 /* WaterTreeView.swift */,
 				56DB3FD92B090C7D00329EE0 /* TreeDetailView.swift */,
 				D7AEC6CD2B090264006B3B29 /* WaterDetailView.swift */,
@@ -206,6 +209,7 @@
 				D7D3002D2B09134E002467D8 /* LocationManager.swift in Sources */,
 				D7D300312B0933D9002467D8 /* CalendarExtension.swift in Sources */,
 				56DB3FDA2B090C7D00329EE0 /* TreeDetailView.swift in Sources */,
+				560949182B09445400003D3A /* Home.swift in Sources */,
 				568FF6F52B092EBC00101AE7 /* LocationObject.swift in Sources */,
 				56DB3FC12B08CF4B00329EE0 /* ContentView.swift in Sources */,
 				56DB3FBF2B08CF4B00329EE0 /* treeApp.swift in Sources */,

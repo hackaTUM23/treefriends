@@ -9,7 +9,17 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        TreeMap()
+        TabView {
+            Home()
+                .tabItem {
+                    Label("Home", systemImage: "tree.fill")
+                }
+            
+            TreeMap()
+                .tabItem {
+                    Label("Map", systemImage: "map")
+                }
+        }
     }
 }
 
