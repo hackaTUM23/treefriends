@@ -9,10 +9,11 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject var model = Model.shared
+    @State var step: Int = 2
     
     var body: some View {
         TabView {
-            Home()
+            Home(step: $step)
                 .tabItem {
                     Label("Home", systemImage: "tree.fill")
                 }
