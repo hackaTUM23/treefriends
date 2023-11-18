@@ -7,19 +7,30 @@
 
 import SwiftUI
 import MapKit
+import CoreLocationUI
 
 struct TreeMap: View {
     @State private var selectedResult: MKMapItem?
     @State private var route: MKRoute?
     @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 48.263090, longitude: 11.669253), span: MKCoordinateSpan(latitudeDelta: 10, longitudeDelta: 10))
+    @State var position: MapCameraPosition = .userLocation(fallback: .automatic)
     @State var showSheet = false
     private let startingPoint = CLLocationCoordinate2D(
         latitude: 48.233082,
         longitude: 11.649272
     )
+    @StateObject var locationManager = LocationManager()
+
+    var userLatitude: String {
+        return "\(locationManager.lastLocation?.coordinate.latitude ?? 0)"
+    }
+    
+    var userLongitude: String {
+        return "\(locationManager.lastLocation?.coordinate.longitude ?? 0)"
+    }
     
     var tree = Tree(id: UUID(), location: LatLng(lat: 48.152600, lng: 11.580371), humidity: 10)
-    
+        
 //    var tree = Tree(id: UUID(), location: LatLng(lat: 48.263082, lng: 11.669272), humidity: 10)
     
     var waterSource = CLLocationCoordinate2D(latitude: 48.264090, longitude: 11.666800)
@@ -27,14 +38,15 @@ struct TreeMap: View {
     var body: some View {
         let coordinate = CLLocationCoordinate2D(latitude: tree.location.lat, longitude: tree.location.lng)
         ZStack {
-            Map(selection: $selectedResult) {
+            Map(position: $position, selection: $selectedResult) {
                 Annotation("Thirsty Tree", coordinate: coordinate) {
-                    WaterTreeTreeView(isThirsty: true).frame(maxWidth: 100, maxHeight: 100)
-                }
+                    WaterTreeTreeView(isThirsty: .constant(true)).frame(maxWidth: 100, maxHeight: 100)
+                }.tag(1)
                 Annotation("Water Source", coordinate: waterSource) {
                     Image(systemName: "drop.fill").resizable().aspectRatio(contentMode: .fit)
                         .foregroundColor(.blue).frame(width: 50, height: 50)
-                }
+                }.tag(2)
+                UserAnnotation()
                 
                 if let route {
                     MapPolyline(route)
@@ -52,6 +64,17 @@ struct TreeMap: View {
             .sheet(isPresented: $showSheet) {
                 TreeDetailView(selectedResult: self.$selectedResult).presentationDetents([.height(400)])
             }
+            VStack {
+                Text("location status: \(locationManager.statusString)")
+                HStack {
+                    Text("latitude: \(userLatitude)")
+                    Text("longitude: \(userLongitude)")
+                }
+            }
+//            LocationButton(.shareMyCurrentLocation) {
+//                locationManager.requestLocation()
+//            }
+//            Text("\((locationManager.location ?? .init()).latitude)")
         }
     }
     
@@ -72,6 +95,35 @@ struct TreeMap: View {
             let response = try? await directions.calculate()
             route = response?.routes.first
         }
+    }
+}
+
+struct MyView: View {
+    
+    @StateObject var locationManager = LocationManager()
+    
+    var userLatitude: String {
+        return "\(locationManager.lastLocation?.coordinate.latitude ?? 0)"
+    }
+    
+    var userLongitude: String {
+        return "\(locationManager.lastLocation?.coordinate.longitude ?? 0)"
+    }
+    
+    var body: some View {
+        VStack {
+            Text("location status: \(locationManager.statusString)")
+            HStack {
+                Text("latitude: \(userLatitude)")
+                Text("longitude: \(userLongitude)")
+            }
+        }
+    }
+}
+
+struct MyView_Previews: PreviewProvider {
+    static var previews: some View {
+        MyView()
     }
 }
 
