@@ -7,10 +7,28 @@
 
 import SwiftUI
 
+
+
 struct WaterDetailView: View {
-    let estimatedLiters = 15
-    let humidity = 60
-    let soilHealth = 50
+    let estimatedLiters = 25
+    let humidity = 30
+    let isFertilized = true
+    let recommendedWateringTime: Date = Date(timeIntervalSinceNow: 3.0 * 60 * 60)
+    let dateLastRain = Date(timeIntervalSinceNow: -13.0 * 60 * 60 * 24)
+    let dateNextRain = Date(timeIntervalSinceNow: 5.0 * 60 * 60 * 24)
+    let dateFormatter = DateFormatter()
+    let dateIntervalFormatter = DateIntervalFormatter()
+    let calendar = Calendar(identifier: .gregorian)
+    
+    init() {
+        dateFormatter.dateFormat = "HH:mm"
+        dateIntervalFormatter.dateStyle = .short
+        dateIntervalFormatter.timeStyle = .none
+    }
+    
+    // zeit naechster niederschlag
+    // kein niederschlag seit
+    // avg min max temp
     
     var body: some View {
         VStack {
@@ -19,9 +37,34 @@ struct WaterDetailView: View {
                 Spacer()
                 getWaterIndicator(liter: estimatedLiters)
             }
-            soilHumidity(humidity: 70)
-            fertilizer(fertilized: true)
+            soilHumidity(humidity: humidity)
+            //fertilizer(fertilized: isFertilized)
+            HStack {
+                Text("Recommended Watering Time")
+                Spacer()
+                Text("\(dateFormatter.string(from: recommendedWateringTime))")
+            }
+            HStack {
+                Text("Last rain")
+                Spacer()
+                Text("\(getInterval(start: dateLastRain, end: Date())) days ago")
+            }
+            HStack {
+                Text("Next rain")
+                Spacer()
+                Text("In \(getInterval(start: Date(), end: dateNextRain)) days")
+            }
+            HStack {
+                Text("Current Temperature")
+                Spacer()
+                Text("38°C")
+            }
         }.padding(.horizontal, 30)
+    }
+    
+    func getInterval(start: Date, end: Date) -> Int {
+        let dateComponent = calendar.dateComponents([Calendar.Component.day], from: calendar.startOfDay(for: start), to: calendar.startOfDay(for: end))
+        return dateComponent.day!
     }
     
     func fertilizer(fertilized: Bool) -> some View {

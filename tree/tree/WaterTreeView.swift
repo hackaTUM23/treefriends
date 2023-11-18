@@ -15,7 +15,7 @@ struct WaterTreeView: View {
     var body: some View {
         Text("Watering the tree").font(.title)
         Spacer().frame(height: 10)
-        Text("Please water the plant with the water that you brought. This window will close as soon as the tree detects enough water in the soil.").padding(.horizontal)
+        Text("This window will close as soon as the tree detects enough water in the soil.").padding(.horizontal)
         WaterTreeTreeView(isThirsty: $isThirsty)
         Spacer().frame(height: 20)
         WaterDetailView()

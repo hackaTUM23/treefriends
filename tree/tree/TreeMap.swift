@@ -7,17 +7,28 @@
 
 import SwiftUI
 import MapKit
+import CoreLocationUI
 
 struct TreeMap: View {
     @State private var selection: UUID?
     @State private var route: MKRoute?
     @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 48.263090, longitude: 11.669253), span: MKCoordinateSpan(latitudeDelta: 10, longitudeDelta: 10))
+    @State var position: MapCameraPosition = .userLocation(fallback: .automatic)
     @State var showSheet = false
     
     private let startingPoint = CLLocationCoordinate2D(
         latitude: 48.233082,
         longitude: 11.649272
     )
+    @StateObject var locationManager = LocationManager()
+
+    var userLatitude: String {
+        return "\(locationManager.lastLocation?.coordinate.latitude ?? 0)"
+    }
+    
+    var userLongitude: String {
+        return "\(locationManager.lastLocation?.coordinate.longitude ?? 0)"
+    }
     
     // Munich
     var tree = Tree(id: UUID(), location: LatLng(lat: 48.152600, lng: 11.580371), humidity: 10)
@@ -40,6 +51,7 @@ struct TreeMap: View {
             
             Marker("Water Source", systemImage: "drop.fill", coordinate: CLLocationCoordinate2D(latitude: waterSource.location.lat, longitude: waterSource.location.lng)).tint(.blue)
             
+            UserAnnotation()
             
             if let route {
                 MapPolyline(route)
@@ -111,6 +123,35 @@ struct TreeMap: View {
             let response = try? await directions.calculate()
             route = response?.routes.first
         }
+    }
+}
+
+struct MyView: View {
+    
+    @StateObject var locationManager = LocationManager()
+    
+    var userLatitude: String {
+        return "\(locationManager.lastLocation?.coordinate.latitude ?? 0)"
+    }
+    
+    var userLongitude: String {
+        return "\(locationManager.lastLocation?.coordinate.longitude ?? 0)"
+    }
+    
+    var body: some View {
+        VStack {
+            Text("location status: \(locationManager.statusString)")
+            HStack {
+                Text("latitude: \(userLatitude)")
+                Text("longitude: \(userLongitude)")
+            }
+        }
+    }
+}
+
+struct MyView_Previews: PreviewProvider {
+    static var previews: some View {
+        MyView()
     }
 }
 
