@@ -7,25 +7,26 @@
 
 import SwiftUI
 
-struct WaterTreeDetails: View {
-    let estimatedLiters = 20
-    let humidity = 60
-    let soilHealth = 50
-    
-    var body: some View {
-        Text("Water Needed")
-        HStack {
-            Text("Soil humidity")
-            Text("Fertilizer Needed")
-        }
-    }
-}
+
+
 
 struct WaterTreeView: View {
+    @State var isThirsty = true
     var body: some View {
-        Text("Please water the tree")
-        WaterTreeTreeView(isThirsty: true)
-        WaterTreeDetails()
+        Text("Watering the tree").font(.title)
+        Spacer().frame(height: 10)
+        Text("Please water the plant with the water that you brought. This window will close as soon as the tree detects enough water in the soil.").padding(.horizontal)
+        WaterTreeTreeView(isThirsty: $isThirsty)
+        Spacer().frame(height: 20)
+        WaterDetailView()
+        HStack {
+            Button("I ran out of water", action: markAsWatered).buttonStyle(.bordered)
+        }
+    }
+    
+    func markAsWatered() {
+        isThirsty.toggle()
+        print("plant watered")
     }
 }
 
