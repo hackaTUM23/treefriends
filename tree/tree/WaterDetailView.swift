@@ -31,6 +31,7 @@ struct WaterDetailView: View {
     // avg min max temp
     
     var body: some View {
+        
         VStack {
             HStack {
                 Text("Water needed")
