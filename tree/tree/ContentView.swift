@@ -25,7 +25,7 @@ struct ContentView: View {
                 .environmentObject(model)
                 .tag(1)
             
-            TreeMap()
+            TreeMap(isInteractive: true)
                 .tabItem {
                     Label("Map", systemImage: "map")
                 }
