@@ -418,6 +418,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = tree/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TreeFriends;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to show the route to the tree you want to water.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -458,6 +459,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = tree/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TreeFriends;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to show the route to the tree you want to water.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;

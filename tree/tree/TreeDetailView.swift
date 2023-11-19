@@ -15,14 +15,14 @@ struct TreeDetailView: View {
     var body: some View {
         VStack {
             LookAroundPreview(initialScene: lookAroundScene)
-                .overlay(alignment: .bottomTrailing) {
-                    HStack {
-                        Text("\(selectedResult.location.lat)/\(selectedResult.location.lon)")
-                    }
-                    .font(.caption)
-                    .foregroundStyle(.white)
-                    .padding(18)
-                }
+//                .overlay(alignment: .bottomTrailing) {
+//                    HStack {
+//                        Text("\(selectedResult.location.lat)/\(selectedResult.location.lon)")
+//                    }
+//                    .font(.caption)
+//                    .foregroundStyle(.white)
+//                    .padding(18)
+//                }
                 .onAppear {
                     getLookAroundScene()
                 }

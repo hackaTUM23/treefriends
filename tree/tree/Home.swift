@@ -33,30 +33,32 @@ struct Home: View {
                 ZStack {
                     RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/).foregroundColor(green)
                     HStack {
-                        VStack {
-                            HStack {
-                                Image(systemName: "leaf.fill")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .foregroundColor(.white)
-                                    .frame(height: 30)
-                                
-                                
-                                Text("\(level)")
-                                    .font(.system(size: 30, weight: .medium))
-                                    .colorInvert()
-                                Spacer()
+                        ZStack {
+                            VStack {
+                                HStack {
+                                    Image(systemName: "leaf.fill")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .foregroundColor(.white)
+                                        .frame(height: 30)
+                                    
+                                    
+                                    Text("\(level)")
+                                        .font(.system(size: 30, weight: .medium))
+                                        .colorInvert()
+                                    Spacer()
+                                }
+                                HStack {
+                                    Image(systemName: "crown.fill")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .foregroundColor(.white)
+                                        .frame(height: 15)
+                                    Spacer()
+                                }
                             }
-                            HStack {
-                                Image(systemName: "crown.fill")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .foregroundColor(.white)
-                                    .frame(height: 15)
-                                Spacer()
-                            }
+                            
                         }
-                        
                         Spacer()
                         ProfileView()
                     }.padding()
@@ -66,8 +68,19 @@ struct Home: View {
             
             //Text("Thank you for keeping Munich green!")
             Spacer()
-            YoungTree(step: $step)
-            Text("This is your personal tree.\nLet it grow by watering trees in Munich. \nKeep going!").multilineTextAlignment(.center).padding()
+            ZStack {
+                YoungTree(step: $step)
+                VStack {
+                    Spacer()
+                    Image("tree")
+                        .resizable()
+                        .scaledToFit()
+                        .padding(.bottom, -90)
+                        .foregroundColor(.white)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity).opacity(0.12)
+                }
+            }
+            Text("This is your personal tree.\nLet it grow by watering trees in Munich. \nKeep going!").multilineTextAlignment(.center).font(.caption).padding()
         }
     }
 }
@@ -76,6 +89,6 @@ struct Home: View {
 
 
 #Preview {
-    Home(step: .constant(3))
+    Home(step: .constant(5))
 }
 

@@ -11,15 +11,18 @@ struct RequestView: View {
     @EnvironmentObject var model: Model
 
     var body: some View {
-        Text("Watering Request").font(/*@START_MENU_TOKEN@*/.largeTitle/*@END_MENU_TOKEN@*/).fontWeight(.bold).padding()
+        Text("Watering Request")
+            .font(/*@START_MENU_TOKEN@*/.largeTitle/*@END_MENU_TOKEN@*/)
+            .fontWeight(.bold)
+            .padding()
         WaterTreeTreeView(isThirsty: .constant(true))
             .padding()
-            .frame(width: 150)
+            .frame(width: 120)
         WaterDetailView()
         TreeMap(isInteractive: false).cornerRadius(20).padding()
         HStack {
-            Button("Accept", action: accept).buttonStyle(.borderedProminent)
             Button("Reject", action: deny).buttonStyle(.bordered)
+            Button("Accept", action: accept).buttonStyle(.borderedProminent)
         }
         Spacer()
     }
