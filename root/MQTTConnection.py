@@ -72,6 +72,8 @@ class MQTTConnection:
                 treeWatcher = TreeWatcher(tree)
                 if treeWatcher.is_tree_okay() is False:
                     self.send_new_request(tree)
+
+                self.send_sensor_data(tree)
                 
             elif data_type == 'conductivity':
                 tree.soil_conductivity = float(msg.payload)
@@ -86,6 +88,14 @@ class MQTTConnection:
         logging.debug(f"Created new request: {request.to_json()}")
         self._database.add_request(request)
 
-        topic = os.getenv('MQTT_TOPIC_PREFIX') + "/user1" + "/request"
+        #topic = os.getenv('MQTT_TOPIC_PREFIX') + "/user1" + "/request"
+        topic = "coaty/3/agent/DSC/thing/state"
         self.publish(topic, request.to_json())
         logging.debug(f"Sent out on topic '{topic}' new request {request.to_json()}")
+
+    def send_sensor_data(self, tree: Tree):
+        topic = os.getenv('MQTT_TOPIC_PREFIX') + "/sensor/test_moisture" + "/state"
+        topic = "coaty/3/agent/DSC/thing/state"
+        msg = "{ \"object\": " + tree.to_json() + "}"
+        self.publish(topic, msg)
+        logging.debug(f"Sent out on topic '{topic}' new sensor data {msg}")

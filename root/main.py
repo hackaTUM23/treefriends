@@ -7,6 +7,21 @@ from Datamodel.Location import location
 from Datamodel.Tree import Tree
 from MQTTConnection import MQTTConnection
 from database import Database
+from flask import Flask, jsonify
+from flask_cors import CORS
+
+app = Flask(__name__)
+CORS(app)
+
+@app.route('/trees', methods=['GET'])
+def get_trees():
+    trees = database.get_all_trees()
+    return jsonify(trees), 200
+
+@app.route('/requests', methods=['GET'])
+def get_requests():
+    requests = database.get_all_requests()
+    return jsonify(requests), 200
 
 # Set up logging
 logging.basicConfig(level=logging.DEBUG)
@@ -27,10 +42,12 @@ if __name__ == "__main__":
     # Start the MQTT loop
     mqtt_connection.start()
 
-    # Keep the program running
     try:
         while True:
             sleep(1)
     except KeyboardInterrupt:
         print("Interrupted by user. Stopping MQTT connection.")
         mqtt_connection.stop()
+
+     # Start the Flask app
+    app.run(host='0.0.0.0', port=5000)

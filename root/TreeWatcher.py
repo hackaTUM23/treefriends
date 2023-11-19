@@ -1,5 +1,3 @@
-
-
 class TreeWatcher():
     _tree = None
 
@@ -7,7 +5,7 @@ class TreeWatcher():
         self._tree = tree
         
     def is_tree_okay(self):
-        if self.moisture_needed():
+        if self.moisture_needed() and self.is_rain_coming() is False:
             return False
         return True
 
@@ -16,5 +14,9 @@ class TreeWatcher():
             return True
         else:
             return False
+
+    def is_rain_coming(self):
+        # TODO: Call weather API
+        return False
 
     

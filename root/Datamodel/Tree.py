@@ -1,3 +1,4 @@
+import json
 from Datamodel.Location import location
 
 class Tree:
@@ -17,4 +18,7 @@ class Tree:
         }
 
     def __str__(self) -> str:
-        return f"Tree: id={self.id}, location={self.location}, moisture={self.moisture}, soil_conductivity={self.soil_conductivity}"
+        return f"Tree: id={self.id}, location={self.location.to_dict()}, moisture={self.moisture}, soil_conductivity={self.soil_conductivity}"
+
+    def to_json(self):
+        return json.dumps(self.to_dict())
