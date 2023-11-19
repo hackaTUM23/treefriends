@@ -32,35 +32,42 @@ struct WaterDetailView: View {
     
     var body: some View {
         
-        VStack {
-            HStack {
-                Text("Water needed")
-                Spacer()
-                getWaterIndicator(liter: estimatedLiters)
-            }
-            soilHumidity(humidity: humidity)
-            //fertilizer(fertilized: isFertilized)
-            HStack {
-                Text("Recommended Watering Time")
-                Spacer()
-                Text("\(dateFormatter.string(from: recommendedWateringTime))")
-            }
-            HStack {
-                Text("Last rain")
-                Spacer()
-                Text("\(getInterval(start: dateLastRain, end: Date())) days ago")
-            }
-            HStack {
-                Text("Next rain")
-                Spacer()
-                Text("In \(getInterval(start: Date(), end: dateNextRain)) days")
-            }
-            HStack {
-                Text("Current Temperature")
-                Spacer()
-                Text("38°C")
-            }
-        }.padding(.horizontal, 30)
+        List {
+//            Section(header: Text("Tree Data")) {
+                HStack {
+                    Text("Water needed")
+                    Spacer()
+                    getWaterIndicator(liter: estimatedLiters)
+                }
+                soilHumidity(humidity: humidity)
+//            }
+            //Section(header: Text("Watering Info")) {
+                //fertilizer(fertilized: isFertilized)
+                HStack {
+                    Text("Watering Time")
+                    Spacer()
+                    Text("\(dateFormatter.string(from: recommendedWateringTime))")
+                    Image(systemName: "info.circle")
+                }
+                HStack {
+                    Text("Last rain")
+                    Spacer()
+                    Text("\(getInterval(start: dateLastRain, end: Date())) days ago")
+                }
+                HStack {
+                    Text("Next rain")
+                    Spacer()
+                    Text("In \(getInterval(start: Date(), end: dateNextRain)) days")
+                }
+//            }
+//            Section(header: Text("Weather Info")) {
+                HStack {
+                    Text("Current Temperature")
+                    Spacer()
+                    Text("38°C")
+                }
+//            }
+        }.listStyle(.plain)
     }
     
     func getInterval(start: Date, end: Date) -> Int {

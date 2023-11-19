@@ -16,7 +16,7 @@ struct WaterTreeView: View {
         Text("Watering the tree").font(.title)
         Spacer().frame(height: 10)
         Text("This window will close as soon as the tree detects enough water in the soil.").padding(.horizontal)
-        WaterTreeTreeView(isThirsty: $isThirsty).frame(height: 300)
+        WaterTreeTreeView(isThirsty: $isThirsty).frame(height: 200)
         Spacer().frame(height: 20)
         WaterDetailView()
         HStack {
