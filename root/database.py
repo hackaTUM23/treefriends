@@ -24,3 +24,9 @@ class Database:
             return self._requests[id]
         except KeyError:
             return None
+
+    def get_all_trees(self):
+        return [tree.to_dict() for tree in self._trees.values()]
+
+    def get_all_requests(self):
+        return [request.to_dict() for request in self._requests.values()]
