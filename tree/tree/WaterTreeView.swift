@@ -11,6 +11,8 @@ import SwiftUI
 
 
 struct WaterTreeView: View {
+    @EnvironmentObject var model: Model
+    @Environment(\.dismiss) var dismiss
     @State var isThirsty = true
     @State var timer: Timer?
 
@@ -28,6 +30,10 @@ struct WaterTreeView: View {
         }.onAppear(perform: {
             self.timer = Timer.scheduledTimer(withTimeInterval: 4, repeats: false, block: {_ in
                 self.isThirsty = false
+                model.userState = .OpenToWork
+                Timer.scheduledTimer(withTimeInterval: 8, repeats: false) {_ in 
+                    dismiss()
+                }
             })
         })
     }
