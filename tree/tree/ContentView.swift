@@ -24,6 +24,8 @@ struct ContentView: View {
                     Label("Map", systemImage: "map")
                 }
                 .environmentObject(model)
+        }.sheet(isPresented: $model.hasNewTask) {
+            RequestView()
         }
     }
 }

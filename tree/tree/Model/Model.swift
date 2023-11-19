@@ -17,4 +17,9 @@ class Model: ObservableObject {
     @Published var tasks: [TreeTask] = []
     
     @Published var currentTask: TreeTask? = nil
+    
+    @Published var hasNewTask: Bool = true
+    
+    @Published var points: Int = 20
+    
 }

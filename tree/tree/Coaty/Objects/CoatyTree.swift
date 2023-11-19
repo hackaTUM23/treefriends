@@ -6,18 +6,16 @@
 //
 
 import Foundation
-import CoatySwift
+//import CoatySwift
 
-final class CoatyTree: CoatyObject, Identifiable, Equatable {
+final class CoatyTree: Identifiable, Equatable {
     static func == (lhs: CoatyTree, rhs: CoatyTree) -> Bool {
         return lhs.id == rhs.id
     }
     
     // MARK: - Class registration.
     
-    override class var objectType: String {
-        return register(objectType: "hello.coaty.Tree", with: self)
-    }
+
     
     // MARK: - Properties.
     let id: UUID
@@ -32,10 +30,7 @@ final class CoatyTree: CoatyObject, Identifiable, Equatable {
         self.location = location
         self.moisture = moisture
         self.soilConductivity = soilConductivity
-        super.init(coreType: .CoatyObject,
-                   objectType: TreeTask.objectType,
-                   objectId: .init(),
-                   name: "Tree")
+        
     }
     
     // MARK: Codable methods.
@@ -53,7 +48,6 @@ final class CoatyTree: CoatyObject, Identifiable, Equatable {
         self.location = try container.decode(LatLon.self, forKey: .location)
         self.moisture = try container.decode(Int.self, forKey: .moisture)
         self.soilConductivity = try container.decode(Int.self, forKey: .soilConductivity)
-        try super.init(from: decoder)
     }
 }
     

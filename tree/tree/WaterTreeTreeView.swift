@@ -13,12 +13,14 @@ struct WaterTreeTreeView: View {
     let yellowLight = UIColor(rgb: 0xff9127)
     let greenLight = UIColor(rgb: 0x02c600)
     @Binding var isThirsty: Bool
+    
+    var transitionDuration = 0.5
     var health: Int {
         get {
             return isThirsty ? 0 : 100
         }
     }
-    
+        
     var body: some View {
         ZStack(content: {
             Image("tree_trunk")
@@ -33,7 +35,7 @@ struct WaterTreeTreeView: View {
                 .resizable()
                 .renderingMode(/*@START_MENU_TOKEN@*/.template/*@END_MENU_TOKEN@*/)
                 .aspectRatio(contentMode: .fit).foregroundColor(Color(yellowLight.toColor(greenLight, percentage: CGFloat(health))))
-        }).animation(.easeInOut(duration: 0.5), value: health)
+        }).animation(.easeInOut(duration: transitionDuration), value: health)
         
     }
 }

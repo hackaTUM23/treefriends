@@ -18,6 +18,8 @@ struct TreeMap: View {
     @State var position: MapCameraPosition = .userLocation(fallback: .automatic)
     @State var showSheet = false
     
+    var isInteractive = true
+    
     private let startingPoint = CLLocationCoordinate2D(
         latitude: 48.233082,
         longitude: 11.649272
@@ -45,6 +47,11 @@ struct TreeMap: View {
         self.trees = [tree]
     }
     
+    init(isInteractive: Bool) {
+        self.isInteractive = isInteractive
+        self.trees = [tree]
+    }
+    
     var body: some View {
         Map(selection: $selection) {
             ForEach(trees){ tree in
@@ -63,7 +70,7 @@ struct TreeMap: View {
             HStack {
                 Spacer()
                 VStack(spacing: 0) {
-                    if let selection {
+                    if selection != nil && isInteractive {
                         if let item = trees.first(where: { $0.id == selection }) {
                             VStack {
                                 HStack {
@@ -95,6 +102,7 @@ struct TreeMap: View {
         .onChange(of: selection) {
             guard let selection else { return }
             guard let item = trees.first(where: { $0.id == selection }) else { return }
+                
         }
         .onAppear {
             getDirections()

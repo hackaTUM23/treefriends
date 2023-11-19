@@ -12,16 +12,24 @@ import SwiftUI
 
 struct WaterTreeView: View {
     @State var isThirsty = true
+    @State var timer: Timer?
+
     var body: some View {
-        Text("Watering the tree").font(.title)
-        Spacer().frame(height: 10)
-        Text("This window will close as soon as the tree detects enough water in the soil.").padding(.horizontal)
-        WaterTreeTreeView(isThirsty: $isThirsty).frame(height: 200)
-        Spacer().frame(height: 20)
-        WaterDetailView()
-        HStack {
-            Button("I ran out of water", action: markAsWatered).buttonStyle(.bordered)
-        }
+        Group {
+            Text("Watering the tree").font(.title)
+            Spacer().frame(height: 10)
+            Text("This window will close as soon as the tree detects enough water in the soil.").padding(.horizontal)
+            WaterTreeTreeView(isThirsty: $isThirsty, transitionDuration: 8.0).frame(height: 200)
+            Spacer().frame(height: 20)
+            WaterDetailView()
+            HStack {
+                Button("I ran out of water", action: markAsWatered).buttonStyle(.bordered)
+            }
+        }.onAppear(perform: {
+            self.timer = Timer.scheduledTimer(withTimeInterval: 4, repeats: false, block: {_ in
+                self.isThirsty = false
+            })
+        })
     }
     
     func markAsWatered() {

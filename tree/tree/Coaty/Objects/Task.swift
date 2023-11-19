@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import CoatySwift
 import MapKit
 
 struct Tree: Decodable, Equatable, LocationObject {
@@ -16,16 +15,14 @@ struct Tree: Decodable, Equatable, LocationObject {
     let soilConductivity: Int
 }
 
-final class TreeTask: CoatyObject, Identifiable, Equatable {
+final class TreeTask: Identifiable, Equatable {
     static func == (lhs: TreeTask, rhs: TreeTask) -> Bool {
         return lhs.id == rhs.id
     }
     
     // MARK: - Class registration.
     
-    override class var objectType: String {
-        return register(objectType: "hello.coaty.Task", with: self)
-    }
+
     
     // MARK: - Properties.
     let id: UUID
@@ -40,10 +37,7 @@ final class TreeTask: CoatyObject, Identifiable, Equatable {
         self.tree = tree
         self.waterSources = waterSources
         self.status = status
-        super.init(coreType: .CoatyObject,
-                   objectType: TreeTask.objectType,
-                   objectId: .init(),
-                   name: "Task")
+
     }
     
     // MARK: Codable methods.
@@ -61,7 +55,6 @@ final class TreeTask: CoatyObject, Identifiable, Equatable {
         self.tree = try container.decode(Tree.self, forKey: .tree)
         self.waterSources = try container.decode([WaterSource].self, forKey: .waterSources)
         self.status = try container.decode(Bool.self, forKey: .status)
-        try super.init(from: decoder)
     }
     
 //    override func encode(to encoder: Encoder) throws {

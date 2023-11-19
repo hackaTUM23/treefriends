@@ -9,17 +9,17 @@ import SwiftUI
 
 struct RequestView: View {
     var body: some View {
-        Text("Watering Request Received").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+        Text("Watering Request").font(/*@START_MENU_TOKEN@*/.largeTitle/*@END_MENU_TOKEN@*/).fontWeight(.bold).padding()
         WaterTreeTreeView(isThirsty: .constant(true))
             .padding()
             .frame(width: 150)
         WaterDetailView()
-        TreeMap().cornerRadius(20).padding()
+        TreeMap(isInteractive: false).cornerRadius(20).padding()
         HStack {
             Button("Accept", action: accept).buttonStyle(.borderedProminent)
             Button("Reject", action: deny).buttonStyle(.bordered)
         }
-        
+        Spacer()
     }
     
     func accept() {

@@ -22,10 +22,13 @@
 		56DB3FC12B08CF4B00329EE0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DB3FC02B08CF4B00329EE0 /* ContentView.swift */; };
 		56DB3FC32B08CF4E00329EE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56DB3FC22B08CF4E00329EE0 /* Assets.xcassets */; };
 		56DB3FC72B08CF4E00329EE0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56DB3FC62B08CF4E00329EE0 /* Preview Assets.xcassets */; };
-		56DB3FCF2B08D1BA00329EE0 /* CoatySwift in Frameworks */ = {isa = PBXBuildFile; productRef = 56DB3FCE2B08D1BA00329EE0 /* CoatySwift */; };
 		56DB3FD22B08D2D000329EE0 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DB3FD12B08D2D000329EE0 /* Task.swift */; };
 		56DB3FD52B08D84D00329EE0 /* TreeMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DB3FD42B08D84D00329EE0 /* TreeMap.swift */; };
 		56DB3FDA2B090C7D00329EE0 /* TreeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DB3FD92B090C7D00329EE0 /* TreeDetailView.swift */; };
+		D73328522B099AC300E4904C /* Starscream in Frameworks */ = {isa = PBXBuildFile; productRef = D73328512B099AC300E4904C /* Starscream */; };
+		D773A21F2B09980600CC226C /* MQTTManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D773A21E2B09980600CC226C /* MQTTManager.swift */; };
+		D773A2222B09995C00CC226C /* CocoaMQTT in Frameworks */ = {isa = PBXBuildFile; productRef = D773A2212B09995C00CC226C /* CocoaMQTT */; };
+		D773A2242B09995C00CC226C /* CocoaMQTTWebSocket in Frameworks */ = {isa = PBXBuildFile; productRef = D773A2232B09995C00CC226C /* CocoaMQTTWebSocket */; };
 		D7AEC6CC2B08F52F006B3B29 /* WaterTreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AEC6CB2B08F52F006B3B29 /* WaterTreeView.swift */; };
 		D7AEC6CE2B090264006B3B29 /* WaterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AEC6CD2B090264006B3B29 /* WaterDetailView.swift */; };
 		D7D3002D2B09134E002467D8 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D3002C2B09134E002467D8 /* LocationManager.swift */; };
@@ -57,6 +60,7 @@
 		56DB3FD12B08D2D000329EE0 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		56DB3FD42B08D84D00329EE0 /* TreeMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeMap.swift; sourceTree = "<group>"; };
 		56DB3FD92B090C7D00329EE0 /* TreeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeDetailView.swift; sourceTree = "<group>"; };
+		D773A21E2B09980600CC226C /* MQTTManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQTTManager.swift; sourceTree = "<group>"; };
 		D7AEC6CB2B08F52F006B3B29 /* WaterTreeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterTreeView.swift; sourceTree = "<group>"; };
 		D7AEC6CD2B090264006B3B29 /* WaterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterDetailView.swift; sourceTree = "<group>"; };
 		D7D3002C2B09134E002467D8 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
@@ -74,7 +78,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				56DB3FCF2B08D1BA00329EE0 /* CoatySwift in Frameworks */,
+				D773A2242B09995C00CC226C /* CocoaMQTTWebSocket in Frameworks */,
+				D773A2222B09995C00CC226C /* CocoaMQTT in Frameworks */,
+				D73328522B099AC300E4904C /* Starscream in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,6 +133,7 @@
 				D7D300342B0982C2002467D8 /* RequestView.swift */,
 				56DB3FD42B08D84D00329EE0 /* TreeMap.swift */,
 				D7D3002C2B09134E002467D8 /* LocationManager.swift */,
+				D773A21E2B09980600CC226C /* MQTTManager.swift */,
 				D7E91E762B08D78F0046B67B /* WaterTreeTreeView.swift */,
 				560949172B09445400003D3A /* Home.swift */,
 				D7D300322B096199002467D8 /* YoungTree.swift */,
@@ -190,7 +197,9 @@
 			);
 			name = tree;
 			packageProductDependencies = (
-				56DB3FCE2B08D1BA00329EE0 /* CoatySwift */,
+				D773A2212B09995C00CC226C /* CocoaMQTT */,
+				D773A2232B09995C00CC226C /* CocoaMQTTWebSocket */,
+				D73328512B099AC300E4904C /* Starscream */,
 			);
 			productName = tree;
 			productReference = 56DB3FBB2B08CF4B00329EE0 /* tree.app */;
@@ -221,7 +230,8 @@
 			);
 			mainGroup = 56DB3FB22B08CF4B00329EE0;
 			packageReferences = (
-				56DB3FCD2B08D1BA00329EE0 /* XCRemoteSwiftPackageReference "coaty-swift" */,
+				D773A2202B09995C00CC226C /* XCRemoteSwiftPackageReference "CocoaMQTT" */,
+				D73328502B099AC300E4904C /* XCRemoteSwiftPackageReference "Starscream" */,
 			);
 			productRefGroup = 56DB3FBC2B08CF4B00329EE0 /* Products */;
 			projectDirPath = "";
@@ -263,6 +273,7 @@
 				560949222B094CA000003D3A /* TaskControllerObserve.swift in Sources */,
 				5609491A2B094B7800003D3A /* CoatyDelegate.swift in Sources */,
 				568FF6F52B092EBC00101AE7 /* LocationObject.swift in Sources */,
+				D773A21F2B09980600CC226C /* MQTTManager.swift in Sources */,
 				5609491C2B094BB400003D3A /* CoatyObjectType.swift in Sources */,
 				D7D300332B096199002467D8 /* YoungTree.swift in Sources */,
 				56DB3FC12B08CF4B00329EE0 /* ContentView.swift in Sources */,
@@ -407,6 +418,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = tree/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to show the route to the tree you want to water.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -446,6 +458,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = tree/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to show the route to the tree you want to water.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -495,21 +508,39 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		56DB3FCD2B08D1BA00329EE0 /* XCRemoteSwiftPackageReference "coaty-swift" */ = {
+		D73328502B099AC300E4904C /* XCRemoteSwiftPackageReference "Starscream" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/coatyio/coaty-swift";
+			repositoryURL = "https://github.com/daltoniam/Starscream";
+			requirement = {
+				kind = exactVersion;
+				version = 4.0.4;
+			};
+		};
+		D773A2202B09995C00CC226C /* XCRemoteSwiftPackageReference "CocoaMQTT" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/emqx/CocoaMQTT";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 2.4.0;
+				minimumVersion = 2.1.8;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		56DB3FCE2B08D1BA00329EE0 /* CoatySwift */ = {
+		D73328512B099AC300E4904C /* Starscream */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 56DB3FCD2B08D1BA00329EE0 /* XCRemoteSwiftPackageReference "coaty-swift" */;
-			productName = CoatySwift;
+			package = D73328502B099AC300E4904C /* XCRemoteSwiftPackageReference "Starscream" */;
+			productName = Starscream;
+		};
+		D773A2212B09995C00CC226C /* CocoaMQTT */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D773A2202B09995C00CC226C /* XCRemoteSwiftPackageReference "CocoaMQTT" */;
+			productName = CocoaMQTT;
+		};
+		D773A2232B09995C00CC226C /* CocoaMQTTWebSocket */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D773A2202B09995C00CC226C /* XCRemoteSwiftPackageReference "CocoaMQTT" */;
+			productName = CocoaMQTTWebSocket;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
