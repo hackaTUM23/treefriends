@@ -67,7 +67,7 @@ struct YoungTree: View {
                 young()
                 older()
             }
-        }.animation(.easeInOut(duration: 1), value: step)
+        }.animation(.easeInOut(duration: 2), value: step)
         
         
     }

@@ -41,7 +41,9 @@ struct ContentView: View {
             switch model.userState {
             case .OpenToWork:
                 self.activeTab = 1
-                self.step += 1
+                
+                    self.step += 1
+                
             case .Working:
                 self.activeTab = 2
             }

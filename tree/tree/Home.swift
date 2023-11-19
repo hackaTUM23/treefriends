@@ -37,13 +37,16 @@ struct Home: View {
                                 Image(systemName: "leaf.fill")
                                     .resizable()
                                     .scaledToFit()
-                                    .foregroundColor(.white)
+                                    .colorInvert()
                                     .frame(height: 30)
                                 
                                 
                                 Text("\(step * 10)")
                                     .font(.system(size: 30, weight: .medium))
                                     .colorInvert()
+                                    .animation(.bouncy(duration:2
+                                                      ))
+                                    
                                 Spacer()
                             }
                             HStack {

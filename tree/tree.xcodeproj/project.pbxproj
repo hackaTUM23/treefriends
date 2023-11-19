@@ -16,7 +16,6 @@
 		560949262B094D3E00003D3A /* UserState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560949252B094D3E00003D3A /* UserState.swift */; };
 		568FF6F52B092EBC00101AE7 /* LocationObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568FF6F42B092EBC00101AE7 /* LocationObject.swift */; };
 		568FF6F72B092F5300101AE7 /* WaterSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568FF6F62B092F5300101AE7 /* WaterSource.swift */; };
-		56A510042B09804000731B73 /* SensorControllerObserve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A510032B09804000731B73 /* SensorControllerObserve.swift */; };
 		56A510062B09811E00731B73 /* CoatyTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A510052B09811E00731B73 /* CoatyTree.swift */; };
 		56DB3FBF2B08CF4B00329EE0 /* treeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DB3FBE2B08CF4B00329EE0 /* treeApp.swift */; };
 		56DB3FC12B08CF4B00329EE0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DB3FC02B08CF4B00329EE0 /* ContentView.swift */; };
@@ -49,7 +48,6 @@
 		560949252B094D3E00003D3A /* UserState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserState.swift; sourceTree = "<group>"; };
 		568FF6F42B092EBC00101AE7 /* LocationObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationObject.swift; sourceTree = "<group>"; };
 		568FF6F62B092F5300101AE7 /* WaterSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterSource.swift; sourceTree = "<group>"; };
-		56A510032B09804000731B73 /* SensorControllerObserve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorControllerObserve.swift; sourceTree = "<group>"; };
 		56A510052B09811E00731B73 /* CoatyTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoatyTree.swift; sourceTree = "<group>"; };
 		56DB3FBB2B08CF4B00329EE0 /* tree.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tree.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56DB3FBE2B08CF4B00329EE0 /* treeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = treeApp.swift; sourceTree = "<group>"; };
@@ -100,7 +98,6 @@
 			isa = PBXGroup;
 			children = (
 				560949212B094CA000003D3A /* TaskControllerObserve.swift */,
-				56A510032B09804000731B73 /* SensorControllerObserve.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -269,7 +266,6 @@
 				56A510062B09811E00731B73 /* CoatyTree.swift in Sources */,
 				560949262B094D3E00003D3A /* UserState.swift in Sources */,
 				560949182B09445400003D3A /* Home.swift in Sources */,
-				56A510042B09804000731B73 /* SensorControllerObserve.swift in Sources */,
 				560949222B094CA000003D3A /* TaskControllerObserve.swift in Sources */,
 				5609491A2B094B7800003D3A /* CoatyDelegate.swift in Sources */,
 				568FF6F52B092EBC00101AE7 /* LocationObject.swift in Sources */,

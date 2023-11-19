@@ -21,17 +21,18 @@ struct WaterTreeView: View {
             Text("Watering the tree").font(.title)
             Spacer().frame(height: 10)
             Text("This window will close as soon as the tree detects enough water in the soil.").padding(.horizontal)
-            WaterTreeTreeView(isThirsty: $isThirsty, transitionDuration: 8.0).frame(height: 200)
+            WaterTreeTreeView(isThirsty: $isThirsty, transitionDuration: 12.0).frame(height: 200)
             Spacer().frame(height: 20)
             WaterDetailView()
             HStack {
                 Button("I ran out of water", action: markAsWatered).buttonStyle(.bordered)
             }
         }.onAppear(perform: {
-            self.timer = Timer.scheduledTimer(withTimeInterval: 4, repeats: false, block: {_ in
+            self.timer = Timer.scheduledTimer(withTimeInterval: 8, repeats: false, block: {_ in
                 self.isThirsty = false
-                model.userState = .OpenToWork
-                Timer.scheduledTimer(withTimeInterval: 8, repeats: false) {_ in 
+                
+                Timer.scheduledTimer(withTimeInterval: 12, repeats: false) {_ in
+                    model.userState = .OpenToWork
                     dismiss()
                 }
             })

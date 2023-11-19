@@ -31,12 +31,11 @@ struct RequestView: View {
         print("accept")
         model.hasNewTask = false
         print(model.tasks)
-        model.currentTask = model.tasks.popLast()
+        model.currentTask = model.tasks[2]
         model.userState = .Working
     }
     
     func deny() {
-        _ = model.tasks.popLast()
         model.hasNewTask = false
         print("deny")
     }
