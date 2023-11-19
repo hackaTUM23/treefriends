@@ -1,0 +1,5 @@
+meteostat
+utm
+dotenv
+paho.mqtt.client
+matplotlib
