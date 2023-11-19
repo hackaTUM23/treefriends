@@ -9,12 +9,10 @@ import SwiftUI
 
 @main
 struct treeApp: App {
+
+    
     
     let manager = MQTTManager()
-
-        init() {
-       
-        }
     
     var body: some Scene {
         WindowGroup {

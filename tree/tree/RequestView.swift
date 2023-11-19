@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct RequestView: View {
+    @EnvironmentObject var model: Model
+
     var body: some View {
         Text("Watering Request").font(/*@START_MENU_TOKEN@*/.largeTitle/*@END_MENU_TOKEN@*/).fontWeight(.bold).padding()
         WaterTreeTreeView(isThirsty: .constant(true))
@@ -24,9 +26,15 @@ struct RequestView: View {
     
     func accept() {
         print("accept")
+        model.hasNewTask = false
+        print(model.tasks)
+        model.currentTask = model.tasks.popLast()
+        model.userState = .Working
     }
     
     func deny() {
+        _ = model.tasks.popLast()
+        model.hasNewTask = false
         print("deny")
     }
 }
