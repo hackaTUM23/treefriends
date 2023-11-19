@@ -88,21 +88,28 @@ struct TreeMap: View {
                                     .padding([.top, .horizontal])
                                 HStack {
                                     Button(action: {}) {
-                                        Text("Open in Maps")
-                                    }.buttonStyle(.borderedProminent)
-                                }
+                                        Image(systemName: "map")
+                                        Text("Open in Maps").font(.headline)
+                                    }.buttonStyle(.bordered).tint(.blue)
+                                    Spacer()
+                                    Button(action: {
+                                        showSheet.toggle()
+                                    }) {
+                                        Image(systemName: "mappin")
+                                        Text("Arrived").font(.headline)
+                                    }.buttonStyle(.borderedProminent).tint(.green)
+                                }.padding()
                             }
                         }
                     }
                 }
                 Spacer()
-            }
+            }.animation(.default)
             .background(.thinMaterial)
         }
         .onChange(of: selection) {
             guard let selection else { return }
             guard let item = trees.first(where: { $0.id == selection }) else { return }
-                
         }
         .onAppear {
             getDirections()
@@ -110,6 +117,9 @@ struct TreeMap: View {
         .mapControls {
             MapCompass()
             MapUserLocationButton()
+        }
+        .sheet(isPresented: $showSheet) {
+            WaterTreeView(isThirsty: true).padding()
         }
     }
     

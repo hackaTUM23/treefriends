@@ -27,7 +27,6 @@ struct Home: View {
     let green = Color(UIColor(rgb: 0xAED655))
     
     
-    
     var body: some View {
         VStack {
             HStack {
@@ -57,7 +56,6 @@ struct Home: View {
                                 Spacer()
                             }
                         }
-                        
                         
                         Spacer()
                         ProfileView()

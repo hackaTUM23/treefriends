@@ -3,4 +3,54 @@
    uuid = "BE4E2E73-9CE6-4110-9670-814CBB40F1E3"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "026B056D-7ED0-4820-8698-B301BC8380DD"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "tree/TreeDetailView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "getLookAroundScene()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "026B056D-7ED0-4820-8698-B301BC8380DD - ee399233bc4f3dff"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #1 @Sendable () async -&gt; () in tree.TreeDetailView.getLookAroundScene() -&gt; ()"
+                  moduleName = "tree"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/madlener/git/tree/tree/tree/TreeDetailView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "124">
+               </Location>
+               <Location
+                  uuid = "026B056D-7ED0-4820-8698-B301BC8380DD - ee399233bc4f3dff"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #1 @Sendable () async -&gt; () in tree.TreeDetailView.getLookAroundScene() -&gt; ()"
+                  moduleName = "tree"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/madlener/git/tree/tree/tree/TreeDetailView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "116">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
