@@ -32,31 +32,6 @@ struct Home: View {
                 ZStack {
                     RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/).foregroundColor(green)
                     HStack {
-<<<<<<< HEAD
-                        ZStack {
-                            VStack {
-                                HStack {
-                                    Image(systemName: "leaf.fill")
-                                        .resizable()
-                                        .scaledToFit()
-                                        .foregroundColor(.white)
-                                        .frame(height: 30)
-                                    
-                                    
-                                    Text("\(level)")
-                                        .font(.system(size: 30, weight: .medium))
-                                        .colorInvert()
-                                    Spacer()
-                                }
-                                HStack {
-                                    Image(systemName: "crown.fill")
-                                        .resizable()
-                                        .scaledToFit()
-                                        .foregroundColor(.white)
-                                        .frame(height: 15)
-                                    Spacer()
-                                }
-=======
                         VStack {
                             HStack {
                                 Image(systemName: "leaf.fill")
@@ -78,7 +53,6 @@ struct Home: View {
                                     .foregroundColor(.white)
                                     .frame(height: 15)
                                 Spacer()
->>>>>>> 7d25aa1 (merge)
                             }
                             
                         }
