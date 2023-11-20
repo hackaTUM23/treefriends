@@ -8,15 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		560949182B09445400003D3A /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560949172B09445400003D3A /* Home.swift */; };
-		5609491A2B094B7800003D3A /* CoatyDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560949192B094B7800003D3A /* CoatyDelegate.swift */; };
-		5609491C2B094BB400003D3A /* CoatyObjectType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5609491B2B094BB400003D3A /* CoatyObjectType.swift */; };
-		5609491E2B094C5100003D3A /* CoatyControllerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5609491D2B094C5100003D3A /* CoatyControllerType.swift */; };
-		560949222B094CA000003D3A /* TaskControllerObserve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560949212B094CA000003D3A /* TaskControllerObserve.swift */; };
 		560949242B094CF800003D3A /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560949232B094CF800003D3A /* Model.swift */; };
 		560949262B094D3E00003D3A /* UserState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560949252B094D3E00003D3A /* UserState.swift */; };
 		568FF6F52B092EBC00101AE7 /* LocationObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568FF6F42B092EBC00101AE7 /* LocationObject.swift */; };
 		568FF6F72B092F5300101AE7 /* WaterSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568FF6F62B092F5300101AE7 /* WaterSource.swift */; };
-		56A510042B09804000731B73 /* SensorControllerObserve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A510032B09804000731B73 /* SensorControllerObserve.swift */; };
 		56A510062B09811E00731B73 /* CoatyTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A510052B09811E00731B73 /* CoatyTree.swift */; };
 		56DB3FBF2B08CF4B00329EE0 /* treeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DB3FBE2B08CF4B00329EE0 /* treeApp.swift */; };
 		56DB3FC12B08CF4B00329EE0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DB3FC02B08CF4B00329EE0 /* ContentView.swift */; };
@@ -41,15 +36,10 @@
 
 /* Begin PBXFileReference section */
 		560949172B09445400003D3A /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
-		560949192B094B7800003D3A /* CoatyDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoatyDelegate.swift; sourceTree = "<group>"; };
-		5609491B2B094BB400003D3A /* CoatyObjectType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoatyObjectType.swift; sourceTree = "<group>"; };
-		5609491D2B094C5100003D3A /* CoatyControllerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoatyControllerType.swift; sourceTree = "<group>"; };
-		560949212B094CA000003D3A /* TaskControllerObserve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskControllerObserve.swift; sourceTree = "<group>"; };
 		560949232B094CF800003D3A /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		560949252B094D3E00003D3A /* UserState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserState.swift; sourceTree = "<group>"; };
 		568FF6F42B092EBC00101AE7 /* LocationObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationObject.swift; sourceTree = "<group>"; };
 		568FF6F62B092F5300101AE7 /* WaterSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterSource.swift; sourceTree = "<group>"; };
-		56A510032B09804000731B73 /* SensorControllerObserve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorControllerObserve.swift; sourceTree = "<group>"; };
 		56A510052B09811E00731B73 /* CoatyTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoatyTree.swift; sourceTree = "<group>"; };
 		56DB3FBB2B08CF4B00329EE0 /* tree.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tree.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56DB3FBE2B08CF4B00329EE0 /* treeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = treeApp.swift; sourceTree = "<group>"; };
@@ -94,15 +84,6 @@
 				56A510052B09811E00731B73 /* CoatyTree.swift */,
 			);
 			path = Objects;
-			sourceTree = "<group>";
-		};
-		560949202B094C8600003D3A /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				560949212B094CA000003D3A /* TaskControllerObserve.swift */,
-				56A510032B09804000731B73 /* SensorControllerObserve.swift */,
-			);
-			path = Controllers;
 			sourceTree = "<group>";
 		};
 		56DB3FB22B08CF4B00329EE0 = {
@@ -171,11 +152,7 @@
 		56DB3FD32B08D55A00329EE0 /* Coaty */ = {
 			isa = PBXGroup;
 			children = (
-				560949202B094C8600003D3A /* Controllers */,
 				5609491F2B094C7E00003D3A /* Objects */,
-				560949192B094B7800003D3A /* CoatyDelegate.swift */,
-				5609491B2B094BB400003D3A /* CoatyObjectType.swift */,
-				5609491D2B094C5100003D3A /* CoatyControllerType.swift */,
 			);
 			path = Coaty;
 			sourceTree = "<group>";
@@ -269,12 +246,8 @@
 				56A510062B09811E00731B73 /* CoatyTree.swift in Sources */,
 				560949262B094D3E00003D3A /* UserState.swift in Sources */,
 				560949182B09445400003D3A /* Home.swift in Sources */,
-				56A510042B09804000731B73 /* SensorControllerObserve.swift in Sources */,
-				560949222B094CA000003D3A /* TaskControllerObserve.swift in Sources */,
-				5609491A2B094B7800003D3A /* CoatyDelegate.swift in Sources */,
 				568FF6F52B092EBC00101AE7 /* LocationObject.swift in Sources */,
 				D773A21F2B09980600CC226C /* MQTTManager.swift in Sources */,
-				5609491C2B094BB400003D3A /* CoatyObjectType.swift in Sources */,
 				D7D300332B096199002467D8 /* YoungTree.swift in Sources */,
 				56DB3FC12B08CF4B00329EE0 /* ContentView.swift in Sources */,
 				56DB3FBF2B08CF4B00329EE0 /* treeApp.swift in Sources */,
@@ -283,7 +256,6 @@
 				56DB3FD22B08D2D000329EE0 /* Task.swift in Sources */,
 				560949242B094CF800003D3A /* Model.swift in Sources */,
 				D7E91E792B08E99F0046B67B /* UIColorExtension.swift in Sources */,
-				5609491E2B094C5100003D3A /* CoatyControllerType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
